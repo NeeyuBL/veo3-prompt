@@ -84,7 +84,7 @@ with col2:
                         # Cấu hình API Key xoay vòng
                         current_key = api_keys[(api_call_count // 19) % len(api_keys)]
                         genai.configure(api_key=current_key)
-                        model = genai.GenerativeModel('gemini-2.5-pro')
+                        model = genai.GenerativeModel('gemini-2.5-flash')
 
                         # --- BƯỚC 1: PHÂN TÍCH TOÀN CẢNH ---
                         log_messages = (
