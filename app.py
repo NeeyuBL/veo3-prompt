@@ -26,7 +26,7 @@ def calculate_duration(chunk_text):
     return duration if duration > 0 else 30
 
 # HÀM GỌI AI THÔNG MINH - TỰ ĐỘNG CHUYỂN KEY KHI HẾT LƯỢT
-def call_gemini_smart(prompt, current_keys, model_name='gemini-1.5-pro'):
+def call_gemini_smart(prompt, current_keys, model_name='gemini-2.5-pro'):
     for i in range(len(current_keys)):
         key = current_keys[0] # Luôn lấy key đầu tiên trong hàng đợi
         try:
@@ -65,7 +65,7 @@ with col2:
             log_box = st.empty()
             zip_buffer = io.BytesIO()
             log_messages = ""
-            
+            director_vision, working_keys = call_gemini_smart(p1, working_keys, model_name='gemini-2.5-pro')
             with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
                 for file_idx, file in enumerate(uploaded_files):
                     try:
